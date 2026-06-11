@@ -138,8 +138,11 @@
   .route-step { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #1e3550; }
   .route-step:last-child { border-bottom: none; }
   .route-dot { width: 10px; height: 10px; background: var(--amber); flex-shrink: 0; }
-  .route-text { font-size: 13px; color: var(--steel); font-weight: 500; }
+  .route-text { font-size: 13px; font-weight: 500; }
   .route-text strong { color: var(--white); }
+  .route-text .t-bg { color: var(--white); }
+  .route-text .t-en { color: #8A9BB0; }
+  .route-text .t-de { color: #7eb8d4; }
   .hero-badges { display: flex; gap: 16px; margin-top: 40px; flex-wrap: wrap; }
   .badge { background: rgba(245,166,35,.12); border: 1px solid rgba(245,166,35,.3); color: var(--amber); font-size: 12px; font-weight: 700; letter-spacing: 2px; padding: 6px 14px; text-transform: uppercase; }
 
@@ -341,11 +344,11 @@
           <i class="fa-solid fa-truck"></i>
         </div>
         <div class="route-path">
-          <div class="route-step"><div class="route-dot"></div><div class="route-text"><strong>България / Bulgarien</strong></div></div>
-          <div class="route-step"><div class="route-dot" style="background:var(--steel)"></div><div class="route-text">Германия · Deutschland · Germany</div></div>
-          <div class="route-step"><div class="route-dot" style="background:var(--steel)"></div><div class="route-text">Австрия · Österreich · France</div></div>
-          <div class="route-step"><div class="route-dot" style="background:var(--steel)"></div><div class="route-text">Дания · Дänemark · Scandinavia</div></div>
-          <div class="route-step"><div class="route-dot"></div><div class="route-text"><strong>↔ Цяла Европа / Ganz Europa</strong></div></div>
+          <div class="route-step"><div class="route-dot"></div><div class="route-text"><strong class="t-bg">България</strong> / <span class="t-de">Bulgarien</span></div></div>
+          <div class="route-step"><div class="route-dot"></div><div class="route-text"><span class="t-bg">Германия</span> · <span class="t-en">Germany</span> · <span class="t-de">Deutschland</span></div></div>
+          <div class="route-step"><div class="route-dot"></div><div class="route-text"><span class="t-bg">Австрия · Франция</span> · <span class="t-en">Austria · France</span> · <span class="t-de">Österreich · Frankreich</span></div></div>
+          <div class="route-step"><div class="route-dot"></div><div class="route-text"><span class="t-bg">Скандинавия · Дания</span> · <span class="t-en">Scandinavia</span> · <span class="t-de">Dänemark</span></div></div>
+          <div class="route-step"><div class="route-dot"></div><div class="route-text"><strong class="t-bg">↔ Цяла Европа</strong> · <span class="t-de">Ganz Europa</span></div></div>
         </div>
       </div>
     </div>
