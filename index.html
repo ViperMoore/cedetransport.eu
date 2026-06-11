@@ -116,7 +116,7 @@
   .hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 4px; color: var(--amber); text-transform: uppercase; margin-bottom: 18px; }
   .hero-title { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(40px, 6vw, 80px); color: var(--white); line-height: 1.0; margin-bottom: 10px; }
   .hero-title .accent { color: var(--amber); }
-  .hero-sub { font-family: 'Oswald', sans-serif; font-size: clamp(16px, 2.5vw, 26px); color: var(--steel); font-weight: 400; margin-bottom: 28px; letter-spacing: 1px; }
+  .hero-sub { font-family: 'Oswald', sans-serif; font-size: clamp(16px, 2.5vw, 26px); color: var(--white); font-weight: 400; margin-bottom: 28px; letter-spacing: 1px; text-decoration: none; border-bottom: none; }
   .hero-desc { font-size: 16px; color: var(--steel); line-height: 1.7; max-width: 480px; margin-bottom: 40px; }
   .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
   .btn-primary { background: var(--amber); color: var(--navy); font-weight: 700; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; padding: 14px 32px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background .2s, transform .1s; font-family: 'Oswald', sans-serif; }
@@ -131,7 +131,7 @@
   .road-line:nth-child(1){animation-delay:0s}.road-line:nth-child(2){animation-delay:.5s}.road-line:nth-child(3){animation-delay:1s}.road-line:nth-child(4){animation-delay:1.5s}
   @keyframes roadline { from{left:-40px}to{left:110%} }
   .road-icons { display: flex; justify-content: space-around; padding: 12px 0; }
-  .road-icons i { font-size: 26px; color: var(--steel); animation: float 3s ease-in-out infinite; }
+  .road-icons i { font-size: 26px; color: var(--white); animation: float 3s ease-in-out infinite; }
   .road-icons i:nth-child(2){animation-delay:.5s}.road-icons i:nth-child(3){animation-delay:1s}.road-icons i:nth-child(4){animation-delay:1.5s}
   @keyframes float { 0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)} }
   .route-path { margin-top: 20px; }
@@ -140,9 +140,9 @@
   .route-dot { width: 10px; height: 10px; background: var(--amber); flex-shrink: 0; }
   .route-text { font-size: 13px; font-weight: 500; }
   .route-text strong { color: var(--white); }
-  .route-text .t-bg { color: var(--white); }
-  .route-text .t-en { color: #8A9BB0; }
-  .route-text .t-de { color: #7eb8d4; }
+  .route-text .t-bg { color: var(--white); font-weight: 600; }
+  .route-text .t-en { color: var(--amber); }
+  .route-text .t-de { color: var(--steel); }
   .hero-badges { display: flex; gap: 16px; margin-top: 40px; flex-wrap: wrap; }
   .badge { background: rgba(245,166,35,.12); border: 1px solid rgba(245,166,35,.3); color: var(--amber); font-size: 12px; font-weight: 700; letter-spacing: 2px; padding: 6px 14px; text-transform: uppercase; }
 
@@ -166,16 +166,18 @@
   .tag { background: rgba(13,27,42,.06); font-size: 11px; font-weight: 600; letter-spacing: 1px; color: var(--navy); padding: 3px 9px; text-transform: uppercase; }
 
   #cargo { background: var(--navy); }
-  .cargo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2px; }
-  .cargo-item { background: var(--navy2); padding: 28px 22px; transition: background .2s; cursor: default; }
+  .cargo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+  .cargo-item { background: var(--navy2); padding: 36px 28px; transition: background .2s; cursor: default; }
   .cargo-item:hover { background: #1a2f45; }
   .cargo-item:hover .cargo-icon-wrap { background: var(--amber); }
   .cargo-item:hover .cargo-icon-wrap i { color: var(--navy); }
-  .cargo-icon-wrap { width: 44px; height: 44px; background: rgba(245,166,35,.15); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; transition: background .2s; }
-  .cargo-icon-wrap i { font-size: 18px; color: var(--amber); transition: color .2s; }
-  .cargo-name { font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 6px; }
-  .cargo-note { font-size: 12px; color: var(--steel); line-height: 1.5; }
-  .cargo-limit { display: inline-block; margin-top: 8px; background: rgba(245,166,35,.15); color: var(--amber); font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 2px 8px; }
+  .cargo-icon-wrap { width: 56px; height: 56px; background: rgba(245,166,35,.15); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; transition: background .2s; }
+  .cargo-icon-wrap i { font-size: 24px; color: var(--amber); transition: color .2s; }
+  .cargo-name { font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+  .cargo-note { font-size: 13px; color: var(--steel); line-height: 1.5; }
+  .cargo-limit { display: inline-block; margin-top: 10px; background: rgba(245,166,35,.15); color: var(--amber); font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 2px 8px; }
+  @media (max-width: 900px) { .cargo-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 500px) { .cargo-grid { grid-template-columns: 1fr; } }
 
   #gallery { background: var(--offwhite); }
   .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
@@ -212,7 +214,10 @@
   .contact-block-value a:hover { color: var(--amber); }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
   .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-  .form-group label { font-size: 11px; font-weight: 600; letter-spacing: 2px; color: var(--steel); text-transform: uppercase; }
+  .form-group label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+  .form-group label.bg { color: var(--white); }
+  .form-group label.en { color: var(--amber); }
+  .form-group label.de { color: var(--steel); }
   .form-group input, .form-group select, .form-group textarea { background: rgba(255,255,255,.06); border: 1px solid rgba(138,155,176,.3); color: var(--white); font-family: 'Inter', sans-serif; font-size: 14px; padding: 12px 14px; outline: none; transition: border .2s; width: 100%; }
   .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--amber); }
   .form-group select option { background: var(--navy2); color: var(--white); }
@@ -492,9 +497,9 @@
   <div class="section-inner">
     <p class="section-eyebrow bg">Снимки</p><p class="section-eyebrow en">Photos</p><p class="section-eyebrow de">Fotos</p>
     <h2 class="section-title bg">Галерия</h2><h2 class="section-title en">Gallery</h2><h2 class="section-title de">Galerie</h2>
-    <p class="section-lead bg">Примерни снимки от транспортирани товари. Добавете свои снимки, за да покажете реална работа.</p>
-    <p class="section-lead en">Example photos of transported cargo. Add your own photos to showcase real work.</p>
-    <p class="section-lead de">Beispielfotos von transportierten Gütern. Fügen Sie eigene Fotos hinzu, um echte Arbeit zu zeigen.</p>
+    <p class="section-lead bg">Какво можем да транспортираме за вас</p>
+    <p class="section-lead en">What we can transport for you</p>
+    <p class="section-lead de">Was wir für Sie transportieren können</p>
     <div class="gallery-grid">
       <div class="gallery-item" style="background:#b8c5d0;"><div class="gallery-placeholder"><i class="fa-solid fa-sailboat"></i><span class="ph-text bg">Лодка на ремарке</span><span class="ph-text en">Boat on trailer</span><span class="ph-text de">Boot auf Anhänger</span></div><div class="gallery-overlay"><div class="gallery-label bg">Моторна лодка</div><div class="gallery-label en">Motor Boat</div><div class="gallery-label de">Motorboot</div></div></div>
       <div class="gallery-item" style="background:#c0cad3;"><div class="gallery-placeholder"><i class="fa-solid fa-caravan"></i><span class="ph-text bg">Каравана в транзит</span><span class="ph-text en">Caravan in transit</span><span class="ph-text de">Wohnwagen im Transit</span></div><div class="gallery-overlay"><div class="gallery-label bg">Каравана</div><div class="gallery-label en">Caravan</div><div class="gallery-label de">Wohnwagen</div></div></div>
@@ -505,9 +510,7 @@
       <div class="gallery-item" style="background:#bac6d0;"><div class="gallery-placeholder"><i class="fa-solid fa-truck-ramp-box"></i><span class="ph-text bg">Товарен превоз</span><span class="ph-text en">Cargo transport</span><span class="ph-text de">Frachttransport</span></div><div class="gallery-overlay"><div class="gallery-label bg">Товари</div><div class="gallery-label en">Cargo</div><div class="gallery-label de">Fracht</div></div></div>
       <div class="gallery-item" style="background:#adbcc8;"><div class="gallery-placeholder"><i class="fa-solid fa-box-open"></i><span class="ph-text bg">Багаж и колети</span><span class="ph-text en">Luggage & parcels</span><span class="ph-text de">Gepäck & Pakete</span></div><div class="gallery-overlay"><div class="gallery-label bg">Багаж</div><div class="gallery-label en">Luggage</div><div class="gallery-label de">Gepäck</div></div></div>
     </div>
-    <p style="margin-top:24px;font-size:13px;color:var(--muted);" class="bg">* Placeholder снимки — заменете с реални снимки.</p>
-    <p style="margin-top:24px;font-size:13px;color:var(--muted);" class="en">* Placeholder images — replace with real photos.</p>
-    <p style="margin-top:24px;font-size:13px;color:var(--muted);" class="de">* Platzhalterbilder — durch echte Fotos ersetzen.</p>
+
   </div>
 </section>
 
@@ -523,14 +526,14 @@
         <p style="font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:18px;" class="bg">CE/DE Transport е семеен бизнес, базиран в Бургас, България. Специализирани сме в международен транспорт на специални и нестандартни товари между България и Европа. Работим с частни клиенти от цяла Европа.</p>
         <p style="font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:18px;" class="en">CE/DE Transport is a family-run business based in Burgas, Bulgaria. We specialise in international transport of special and non-standard cargo between Bulgaria and Europe. We work with private clients from across Europe.</p>
         <p style="font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:18px;" class="de">CE/DE Transport ist ein Familienunternehmen mit Sitz in Burgas, Bulgarien. Wir sind spezialisiert auf den internationalen Transport von Sonder- und Übergrössen-Gütern zwischen Bulgarien und Europa. Wir arbeiten mit Privatkunden aus ganz Europa.</p>
-        <p style="font-size:16px;color:var(--muted);line-height:1.75;" class="bg">Нашата цел е всеки клиент да получи максимална грижа, прозрачна комуникация и стоката му да пристигне в перфектно състояние.</p>
+        <p style="font-size:16px;color:var(--muted);line-height:1.75;" class="bg">Нашата цел е всеки клиент да получи максимална грижа, прозрачна комуникация и пратката му да пристигне в перфектно състояние.</p>
         <p style="font-size:16px;color:var(--muted);line-height:1.75;" class="en">Our goal is for every client to receive maximum care, transparent communication and their goods to arrive in perfect condition.</p>
         <p style="font-size:16px;color:var(--muted);line-height:1.75;" class="de">Unser Ziel ist es, dass jeder Kunde maximale Fürsorge, transparente Kommunikation erhält und seine Waren in einwandfreiem Zustand ankommen.</p>
         <div class="about-stats">
-          <div class="stat"><div class="stat-number">CE</div><div class="stat-label bg">Категория шофьорска книжка</div><div class="stat-label en">Driving licence category</div><div class="stat-label de">Führerscheinklasse</div></div>
-          <div class="stat"><div class="stat-number">DE</div><div class="stat-label bg">Категория шофьорска книжка</div><div class="stat-label en">Driving licence category</div><div class="stat-label de">Führerscheinklasse</div></div>
-          <div class="stat"><div class="stat-number">EU</div><div class="stat-label bg">Покритие цяла Европа</div><div class="stat-label en">Full European coverage</div><div class="stat-label de">Ganz Europa</div></div>
-          <div class="stat"><div class="stat-number">24/7</div><div class="stat-label bg">Достъпни за връзка</div><div class="stat-label en">Available to contact</div><div class="stat-label de">Erreichbar</div></div>
+          <div class="stat"><div class="stat-number">CE</div><div class="stat-label bg">Бус с ремарке над 750 кг</div><div class="stat-label en">Van with trailer over 750kg</div><div class="stat-label de">Bus mit Anhänger über 750 kg</div></div>
+          <div class="stat"><div class="stat-number">DE</div><div class="stat-label bg">Камион с ремарке над 750 кг</div><div class="stat-label en">Truck with trailer over 750kg</div><div class="stat-label de">LKW mit Anhänger über 750 kg</div></div>
+          <div class="stat"><div class="stat-number">EU</div><div class="stat-label bg">От и до всяка точка на Европа</div><div class="stat-label en">To and from anywhere in Europe</div><div class="stat-label de">Von und nach ganz Europa</div></div>
+          <div class="stat"><div class="stat-number">24/7</div><div class="stat-label bg">Винаги на линия за вас</div><div class="stat-label en">Always available for you</div><div class="stat-label de">Immer für Sie erreichbar</div></div>
         </div>
       </div>
       <div>
@@ -548,11 +551,11 @@
           </div></div>
           <div class="license-item"><div class="license-badge"><i class="fa-solid fa-handshake" style="font-size:18px;"></i></div><div class="license-text">
             <strong class="bg">Лична комуникация</strong><strong class="en">Personal communication</strong><strong class="de">Persönliche Kommunikation</strong>
-            <span class="bg">Говорите директно с човека, който ще превози вашия товар.</span><span class="en">You speak directly with the person transporting your cargo.</span><span class="de">Sie sprechen direkt mit der Person, die Ihr Gut transportiert.</span>
+            <span class="bg">Говорите директно с човека, който ще превози вашата пратка.</span><span class="en">You speak directly with the person transporting your cargo.</span><span class="de">Sie sprechen direkt mit der Person, die Ihr Gut transportiert.</span>
           </div></div>
         </div>
         <div style="margin-top:36px;padding:24px;background:var(--offwhite);border-left:4px solid var(--amber);">
-          <p style="font-size:15px;color:var(--text);line-height:1.7;" class="bg"><strong>Не сте сигурни дали товарът ви може да се превози?</strong> Обадете се или изпратете снимка — ще ви отговорим веднага.</p>
+          <p style="font-size:15px;color:var(--text);line-height:1.7;" class="bg"><strong>Не сте сигурни дали пратката ви може да се превози?</strong> Обадете се или изпратете снимка — ще ви отговорим веднага.</p>
           <p style="font-size:15px;color:var(--text);line-height:1.7;" class="en"><strong>Not sure if your cargo can be transported?</strong> Call us or send a photo — we'll answer immediately.</p>
           <p style="font-size:15px;color:var(--text);line-height:1.7;" class="de"><strong>Nicht sicher, ob Ihr Gut transportiert werden kann?</strong> Rufen Sie uns an oder senden Sie ein Foto — wir antworten sofort.</p>
           <a href="#contact" class="btn-primary" style="margin-top:16px;display:inline-flex;"><i class="fa-solid fa-phone"></i><span class="bg">Свържете се</span><span class="en">Get in Touch</span><span class="de">Kontakt aufnehmen</span></a>
@@ -588,19 +591,13 @@
           <div class="contact-block-value en">Burgas, Bulgaria</div>
           <div class="contact-block-value de">Burgas, Bulgarien</div>
         </div></div>
-        <div class="contact-block"><div class="contact-icon"><i class="fa-solid fa-clock"></i></div><div>
-          <div class="contact-block-label bg">Работно време</div><div class="contact-block-label en">Working Hours</div><div class="contact-block-label de">Arbeitszeiten</div>
-          <div class="contact-block-value bg">Пон – Съб: 08:00 – 20:00</div>
-          <div class="contact-block-value en">Mon – Sat: 08:00 – 20:00</div>
-          <div class="contact-block-value de">Mo – Sa: 08:00 – 20:00</div>
-        </div></div>
-        <div style="margin-top:8px;padding:20px;background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.25);display:flex;gap:12px;align-items:flex-start;">
-          <i class="fa-brands fa-whatsapp" style="color:var(--amber);font-size:22px;flex-shrink:0;margin-top:2px;"></i>
-          <div>
-            <p style="font-size:14px;color:var(--steel);line-height:1.65;" class="bg">За бързи запитвания — Viber / WhatsApp на горния номер.</p>
-            <p style="font-size:14px;color:var(--steel);line-height:1.65;" class="en">For quick enquiries — Viber / WhatsApp on the number above.</p>
-            <p style="font-size:14px;color:var(--steel);line-height:1.65;" class="de">Für schnelle Anfragen — Viber / WhatsApp unter der obigen Nummer.</p>
-          </div>
+        <div style="margin-top:8px;display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="viber://chat?number=%2B359899857834" style="display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:#7360f2;color:#fff;text-decoration:none;font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;letter-spacing:1px;transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+            <i class="fa-brands fa-viber" style="font-size:18px;"></i> VIBER
+          </a>
+          <a href="https://wa.me/359899857834" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:#25d366;color:#fff;text-decoration:none;font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;letter-spacing:1px;transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+            <i class="fa-brands fa-whatsapp" style="font-size:18px;"></i> WHATSAPP
+          </a>
         </div>
       </div>
       <div>
